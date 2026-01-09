@@ -1,0 +1,17 @@
+# Node.js
+node_modules/
+.env
+.DS_Store
+
+#next.js
+.next/
+
+# Java (Spring Boot)
+target/
+.idea/
+*.iml
+*.class
+*.log
+*.jar
+*.war
+*.ear
