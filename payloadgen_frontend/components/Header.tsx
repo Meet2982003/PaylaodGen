@@ -51,10 +51,10 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, onMenuClick }) => {
           </div>
           <nav className="hidden md:flex gap-8">
             <button
-              onClick={() => router.push("/")}
+              onClick={() => router.push("/documentation")}
               className="text-gray-300 hover:text-indigo-400 transition duration-200 font-medium text-sm cursor-pointer bg-transparent border-none"
             >
-              Home
+              Documentation
             </button>
             <div className="relative">
               <button
@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, onMenuClick }) => {
                   </button>
                   <button
                     onClick={() => {
-                      router.push("/product-report");
+                      router.push("/product/table");
                       setReportDropdownOpen(false);
                     }}
                     className="w-full text-left px-4 py-2 text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition duration-200 font-medium text-sm"

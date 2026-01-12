@@ -137,7 +137,8 @@ export default function Home() {
               </h2>
             </div>
             <p className="text-gray-300 leading-relaxed text-lg max-w-2xl text-center font-light tracking-wide">
-              Access User and Product table and forms through the sidebar
+              Unleash the Power of One: Build, Manage, and Transform Data with a
+              Single API.
             </p>
           </div>
         </main>

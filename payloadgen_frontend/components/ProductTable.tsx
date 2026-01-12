@@ -2,12 +2,12 @@
 "use client";
 import DataTableWrapper from "@/components/DataTableWrapper";
 
-export default function UserTablePage() {
+export default function ProductTablePage() {
   return (
     <DataTableWrapper
-      entityType="user"
-      title="Users"
-      description="Manage and view all users"
+      entityType="product"
+      title="Products"
+      description="Manage and view all products"
     />
   );
 }
