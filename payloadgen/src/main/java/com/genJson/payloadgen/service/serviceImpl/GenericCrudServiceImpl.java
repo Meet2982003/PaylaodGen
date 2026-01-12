@@ -256,15 +256,18 @@ public class GenericCrudServiceImpl implements GenericCrudService {
         return Map.of("deleted", true, "id", idValue);
     }
 
-    // --- Helper to resolve entity dynamically
     private EntityContext resolveEntityContext(Map<String, Object> payload) {
         String entityName = (String) payload.get("entity");
+        // NEW: Check for entityType as fallback
+        if (entityName == null) {
+            entityName = (String) payload.get("entityType");
+        }
         Object data = payload.get("data");
 
         Class<?> entityClass;
         JpaRepository<?, ?> repo;
 
-        if (entityName != null) {
+        if (entityName != null && !entityName.isEmpty()) {
             entityClass = registry.getEntityClass(entityName);
             repo = registry.getRepository(entityName);
         } else {
