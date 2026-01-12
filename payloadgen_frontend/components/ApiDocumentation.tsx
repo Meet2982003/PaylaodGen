@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
+import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
 
 export default function DetailedDocumentation() {
   const [expanded, setExpanded] = useState<string | null>("overview");
@@ -68,95 +70,30 @@ export default function DetailedDocumentation() {
         }
       `}</style>
 
+      <div
+        className={`transition-all duration-300 ${
+          sidebarOpen ? "lg:ml-64" : ""
+        }`}
+      ></div>
       {/* Header */}
-      <header className="bg-slate-900/80 border-b border-indigo-500/20 sticky top-0 z-50 backdrop-blur">
-        <div className="flex items-center justify-between p-4 max-w-full">
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="lg:hidden p-2 hover:bg-slate-800 rounded-lg transition-colors"
-            >
-              {sidebarOpen ? (
-                <X className="w-6 h-6 text-white" />
-              ) : (
-                <Menu className="w-6 h-6 text-white" />
-              )}
-            </button>
-            <h1 className="text-xl font-bold text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text">
-              PayloadGen Docs
-            </h1>
-          </div>
-        </div>
-      </header>
+      <div className="bg-slate-900/80 border-b border-indigo-500/20 sticky top-0 z-50 backdrop-blur">
+        <Header
+          sidebarOpen={sidebarOpen}
+          onMenuClick={() => setSidebarOpen(!sidebarOpen)}
+        />
+      </div>
 
       {/* Main Layout */}
       <div className="flex flex-1">
         {/* Sidebar */}
-        <aside
-          className={`${
-            sidebarOpen ? "w-64" : "w-0"
-          } bg-slate-900/50 border-r border-indigo-500/20 overflow-hidden transition-all duration-300 hidden lg:block`}
-        >
-          <nav className="p-6 space-y-2">
-            <NavLink
-              label="Overview"
-              id="overview"
-              expanded={expanded}
-              onClick={() => setExpanded("overview")}
-            />
-            <NavLink
-              label="Entity Registration"
-              id="registration"
-              expanded={expanded}
-              onClick={() => setExpanded("registration")}
-            />
-            <NavLink
-              label="Entity Guessing"
-              id="guessing"
-              expanded={expanded}
-              onClick={() => setExpanded("guessing")}
-            />
-            <NavLink
-              label="Create/Update Flow"
-              id="create"
-              expanded={expanded}
-              onClick={() => setExpanded("create")}
-            />
-            <NavLink
-              label="Find All Flow"
-              id="findall"
-              expanded={expanded}
-              onClick={() => setExpanded("findall")}
-            />
-            <NavLink
-              label="Find By ID Flow"
-              id="findbyid"
-              expanded={expanded}
-              onClick={() => setExpanded("findbyid")}
-            />
-            <NavLink
-              label="Delete Flow"
-              id="delete"
-              expanded={expanded}
-              onClick={() => setExpanded("delete")}
-            />
-            <NavLink
-              label="Reflection & Type"
-              id="reflection"
-              expanded={expanded}
-              onClick={() => setExpanded("reflection")}
-            />
-            <NavLink
-              label="Flow Diagram"
-              id="diagram"
-              expanded={expanded}
-              onClick={() => setExpanded("diagram")}
-            />
-          </nav>
-        </aside>
+        <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
         {/* Main Content */}
-        <main className="flex-1 overflow-auto">
+        <main
+          className={`flex-1 transition-all duration-300 ${
+            sidebarOpen ? "lg:ml-64" : ""
+          }`}
+        >
           <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
             <div className="max-w-5xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-4">
