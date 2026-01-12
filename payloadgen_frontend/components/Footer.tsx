@@ -133,8 +133,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="border-t border-slate-800 pt-8">
           <p className="text-center text-gray-500 text-sm font-light">
-            © 2026 PayloadGen Technologies. Building the future of web
-            applications. All rights reserved.
+            © 2026 PayloadGen. All rights reserved.
           </p>
         </div>
       </div>

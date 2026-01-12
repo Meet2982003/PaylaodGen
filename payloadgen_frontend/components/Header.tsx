@@ -102,10 +102,10 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, onMenuClick }) => {
               )}
             </div>
             <button
-              onClick={() => router.push("/services")}
+              onClick={() => router.push("/about")}
               className="text-gray-300 hover:text-indigo-400 transition duration-200 font-medium text-sm cursor-pointer bg-transparent border-none"
             >
-              Services
+              About
             </button>
             <button
               onClick={() => router.push("/contact")}

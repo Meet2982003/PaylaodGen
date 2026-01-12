@@ -92,16 +92,16 @@ export default function Home() {
               {[...Array(20)].map((_, i) => (
                 <div
                   key={i}
-                  style={{
-                    width: Math.random() * 4 + 2 + "px",
-                    height: Math.random() * 4 + 2 + "px",
-                    left: Math.random() * 100 + "%",
-                    top: Math.random() * 100 + "%",
-                    transform: `translateZ(${Math.random() * 200 - 100}px)`,
-                    animation: `float ${
-                      3 + Math.random() * 2
-                    }s infinite ease-in-out`,
-                  }}
+                  // style={{
+                  //   width: Math.random() * 4 + 2 + "px",
+                  //   height: Math.random() * 4 + 2 + "px",
+                  //   left: Math.random() * 100 + "%",
+                  //   top: Math.random() * 100 + "%",
+                  //   transform: `translateZ(${Math.random() * 200 - 100}px)`,
+                  //   animation: `float ${
+                  //     3 + Math.random() * 2
+                  //   }s infinite ease-in-out`,
+                  // }}
                 />
               ))}
             </div>
